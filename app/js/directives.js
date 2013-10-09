@@ -10,7 +10,7 @@ angular.module('myApp.directives', []).
     };
   }]);
 
-  angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
+/*  angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
     config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
         when('/', {
@@ -21,4 +21,4 @@ angular.module('myApp.directives', []).
             redirectTo: '/'
         });
     $locationProvider.html5Mode(true);
-}]);
+}]);*/
