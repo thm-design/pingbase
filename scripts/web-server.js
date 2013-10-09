@@ -8,7 +8,7 @@ var util = require('util'),
 
 var DEFAULT_PORT = process.env.PORT || 8000;
 
-function main(argv) {
+/*function main(argv) {
   new HttpServer({
     'GET': createServlet(StaticServlet),
     'HEAD': createServlet(StaticServlet)
@@ -25,7 +25,7 @@ function escapeHtml(value) {
 function createServlet(Class) {
   var servlet = new Class();
   return servlet.handleRequest.bind(servlet);
-}
+}*/
 
 /**
  * An Http server implementation that uses a map of methods to decide
@@ -33,7 +33,7 @@ function createServlet(Class) {
  *
  * @param {Object} Map of method => Handler function
  */
-function HttpServer(handlers) {
+/*function HttpServer(handlers) {
   this.handlers = handlers;
   this.server = http.createServer(this.handleRequest_.bind(this));
 }
@@ -64,12 +64,12 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
   } else {
     handler.call(this, req, res);
   }
-};
+};*/
 
 /**
  * Handles static content.
  */
-function StaticServlet() {}
+/*function StaticServlet() {}
 
 StaticServlet.MimeMap = {
   'txt': 'text/plain',
@@ -241,4 +241,4 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
 };
 
 // Must be last,
-main(process.argv);
+main(process.argv);*/
