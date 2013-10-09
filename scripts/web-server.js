@@ -222,7 +222,8 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
     res.end();
     return;
   }
-  res.write('<!doctype html>\n');
+
+/*  res.write('<!doctype html>\n');
   res.write('<title>' + escapeHtml(path) + '</title>\n');
   res.write('<style>\n');
   res.write('  ol { list-style-type: none; font-size: 1.2em; }\n');
@@ -236,9 +237,15 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
         escapeHtml(fileName) + '</a></li>');
     }
   });
-  res.write('</ol>');
+  res.write('</ol>');*/
+res.write('<script>');
+res.write('var curl = window.location.href;');
+res.write('var newurl = curl + "app/index.html";');
+res.write('window.location = newurl;');
+res.write('</script>');
   res.end();
 };
 
 // Must be last
 main(process.argv);
+

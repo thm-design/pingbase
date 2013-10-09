@@ -30,11 +30,6 @@ angular.module('myApp',
          controller: 'LoginCtrl'
       });
 
-      $routeProvider.when('/app', {
-         templateUrl: 'app/index.html',
-         controller: 'home'
-      });
-
       $routeProvider.otherwise({redirectTo: '/view1'});
    }])
 
