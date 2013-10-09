@@ -8,11 +8,13 @@ angular.module('myApp',
    // configure views; note the authRequired parameter for authenticated pages
    .config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/view1', {
+         authRequired: true,
          templateUrl: 'partials/view1.html',
          controller: 'MyCtrl1'
       });
 
       $routeProvider.when('/view2', {
+         authRequired: true,
          templateUrl: 'partials/view2.html',
          controller: 'MyCtrl2'
       });
@@ -26,6 +28,11 @@ angular.module('myApp',
       $routeProvider.when('/login', {
          templateUrl: 'partials/login.html',
          controller: 'LoginCtrl'
+      });
+
+      $routeProvider.when('/app', {
+         templateUrl: 'app/index.html',
+         controller: 'home'
       });
 
       $routeProvider.otherwise({redirectTo: '/view1'});
