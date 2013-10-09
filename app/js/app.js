@@ -30,7 +30,7 @@ angular.module('myApp',
          controller: 'LoginCtrl'
       });
 
-      $routeProvider.otherwise({redirectTo: '/view1'});
+      $routeProvider.otherwise({redirectTo: '/'});
    }])
 
    // double-check that the app has been configured
@@ -45,19 +45,3 @@ angular.module('myApp',
       angularFireAuth.initialize(FBURL, {scope: $rootScope, name: "auth", path: '/login'});
       $rootScope.FBURL = FBURL;
    }]);
-
-var myUserID = null;
-
-//Create an Firebase Simple Login client so we can do Facebook auth
-var Tauth = new FirebaseSimpleLogin(commentsRef, function(error, user) {
-  if(user) {
-    myUserID = user.id;
-    $("#loginDiv").text(user.first_name + " " + user.last_name);
-  }
-});
-
-
-//twitter
-function onLoginButtonClicked() {
-  Tauth.login("twitter");
-}

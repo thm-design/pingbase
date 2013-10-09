@@ -22,7 +22,7 @@
       },
       "users": {
          "$user": {
-            //".read": "auth.id === $user && auth.provider === 'password'", // for production
+            ".read": "auth.id === $user && auth.provider === 'password'", // for production
             ".write": "auth.id === $user && auth.provider === 'password'",
             ".validate": "newData.hasChildren(['name', 'email'])",
             "name": {

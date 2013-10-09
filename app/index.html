@@ -6,16 +6,16 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-
+<p class="status good" ng-show="auth" ng-cloak>You are logged in</p>
+<p class="status" ng-hide="auth" ng-cloak>You are not logged in</p>
   <ul class="menu">
     <li><a href="#/view1">view1</a></li>
     <li><a href="#/view2">view2</a></li>
-    <li ng-hide="auth"><a href="#/login">login</a></li>
+    <li ng-hide="auth"><a href="#/login">login with email</a></li>
+    <!--li ng-hide="auth"><a href="javascript:login('twitter');">Log with twitter</a></li-->
     <li ng-show="auth"><a href="#/account">account</a></li>
   </ul>
-<div id="loginDiv">
-  <a href="#" onclick="onLoginButtonClicked()" id="login">Login with Twitter</a>
-</div>
+
   <div ng-view></div>
 
   <div>AngularFire-seed v<span app-version></span></div>
@@ -30,5 +30,31 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+      <script type="text/javascript">
+    var href = document.location.href;
+     
+    // FirebaseSimpleLogin demo instantiation
+    var firebaseRef = new Firebase("https://realtimechat.firebaseio.com");
+    var auth = new FirebaseSimpleLogin(firebaseRef, function(error, user) {
+      if (error) {
+        // an error occurred while attempting login
+        alert(error);
+      } else if (user) {
+        // user authenticated with Firebase, redirect to the app
+    
+        window.location.href='index.html?id=' +user.id;
+
+      // Log out so we can log in again with a different provider.
+      auth.logout();
+      } else {
+        // user is logged out
+      }
+    });
+    function login(provider) {
+      auth.login(provider);
+    }
+
+   
+  </script>
 </body>
 </html>
