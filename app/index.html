@@ -2,23 +2,41 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
+   <title>Pingbase</title>
+  <link rel="stylesheet" href="scss/css/sbase.css">
 </head>
+<noscript><p>Warning: This needs JavaScript enabled to work.</p></noscript>
 <body>
-<p class="status good" ng-show="auth" ng-cloak>You are logged in</p>
-<p class="status" ng-hide="auth" ng-cloak>You are not logged in</p>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-    <li ng-hide="auth"><a href="#/login">login with email</a></li>
-    <!--li ng-hide="auth"><a href="javascript:login('twitter');">Log with twitter</a></li-->
-    <li ng-show="auth"><a href="#/account">account</a></li>
-  </ul>
+    <header>
+    <section id="title" class="container masthead">
+      <div class="row">
+        <div class="span12">
+          <h1><span class="color-text">Pingbase</span></h1>
+          <p class="status good" ng-show="auth" ng-cloak>You are logged in</p>
+          <p class="status" ng-hide="auth" ng-cloak>You are not logged in</p>
+          <span ng-hide="auth"><a href="#/login">login with email</a></span>
+        </div>
+      </div>
+      <span ng-show="auth" style="float:right;"><a href="#/account">account</a></span><br />
+    </section>
+  </header>
 
   <div ng-view></div>
 
-  <div>AngularFire-seed v<span app-version></span></div>
+  <!-- Start Footer -->
+  <section class="container">
+  <div class="row">
+  <footer>
+      <div class="row">
+        <div class="span12">
+          <p>a realtime app experiment by <a href="http://www.tonymeyer.org" target="_blank"> www.tonymeyer.org</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  </section>
+  <!-- End Footer -->
 
   <script src="http://static.firebase.com/v0/firebase.js"></script>
   <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
@@ -31,10 +49,10 @@
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
       <script type="text/javascript">
-    var href = document.location.href;
+  /* var href = document.location.href;
      
-    // FirebaseSimpleLogin demo instantiation
-    var firebaseRef = new Firebase("https://realtimechat.firebaseio.com");
+  //FirebaseSimpleLogin demo instantiation
+   var firebaseRef = new Firebase("https://realtimechat.firebaseio.com");
     var auth = new FirebaseSimpleLogin(firebaseRef, function(error, user) {
       if (error) {
         // an error occurred while attempting login
@@ -52,8 +70,7 @@
     });
     function login(provider) {
       auth.login(provider);
-    }
-
+    }*/
    
   </script>
 </body>

@@ -1,5 +1,8 @@
 
-<h2>Login Page</h2>
+  <div class="menu ptop150">
+    <!--li ng-hide="auth"><a href="javascript:login('twitter');">Log with twitter</a></li-->
+    <span ng-show="auth"><a href="#/view1">Start</a></span><br />
+  </div>
 
 <form>
     <label>
@@ -14,9 +17,9 @@
         <span>confirm pass</span>
         <input type="password" ng-model="confirm" />
     </label>
-    <button ng-click="login()" ng-hide="createMode">Log In</button>
-    <button ng-click="createMode = true" ng-hide="createMode">Create Account</button>
-    <button ng-cloak ng-show="createMode" ng-click="createAccount()">Ready to Create</button>
+    <button class="btn round medium" ng-click="login()" ng-hide="createMode">Log In</button>
+    <button class="btn round medium" ng-click="createMode = true" ng-hide="createMode">Create Account</button>
+    <button class="btn round medium" ng-cloak ng-show="createMode" ng-click="createAccount()">Ready to Create</button>
 
     <p ng-show="err" class="error">{{err}}</p>
 </form>

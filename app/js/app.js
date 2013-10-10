@@ -30,7 +30,7 @@ angular.module('myApp',
          controller: 'LoginCtrl'
       });
 
-      $routeProvider.otherwise({redirectTo: '/'});
+      $routeProvider.otherwise({redirectTo: '/login'});
    }])
 
    // double-check that the app has been configured
@@ -45,3 +45,5 @@ angular.module('myApp',
       angularFireAuth.initialize(FBURL, {scope: $rootScope, name: "auth", path: '/login'});
       $rootScope.FBURL = FBURL;
    }]);
+
+

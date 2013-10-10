@@ -7,7 +7,7 @@ angular.module('myApp.config', [])
    .constant('version', '0.1')
 
    // your Firebase URL goes here
-   .constant('FBURL', 'https://realtimechat.firebaseio.com');
+   .constant('FBURL', 'https://pingbase.firebaseio.com');
 
    //you can use this one to try out a demo of the seed
    //.constant('FBURL', 'https://angularfire-seed.firebaseio.com');
